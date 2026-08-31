@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-template_dir = os.path.join(base_dir, '../frontEnd')
+template_dir = os.path.join(base_dir, '../frontend')
 static_dir = os.path.join(base_dir, '../disenno')
 
 app = Flask(__name__,
