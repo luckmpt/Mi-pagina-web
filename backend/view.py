@@ -1,8 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+template_dir = os.path.join(base_dir, '../frontEnd')
+static_dir = os.path.join(base_dir, '../disenno')
 
 app = Flask(__name__,
-            template_folder='../frontEnd',
-            static_folder='../disenno')
+            template_folder=template_dir,
+            static_folder=static_dir)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
