@@ -8,7 +8,7 @@ app = Flask(__name__,
 def index():
     if request.method == 'POST':
         # Handle form submission or other POST requests here
-        return redirect(url_for('/'))
+        return redirect(url_for('index'))
     return render_template('landing.html')
 
 if __name__ == '__main__':
