@@ -1,0 +1,15 @@
+{
+  "devCommand": "python -m backend.view",
+  "builds": [
+    {
+      "src": "backend/view.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "backend/view.py"
+    }
+  ]
+}
