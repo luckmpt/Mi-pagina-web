@@ -1,12 +1,9 @@
 {
-  "version": 2,
+  "devCommand": "python -m backend.view",
   "builds": [
     {
       "src": "backend/view.py",
-      "use": "@vercel/python",
-      "config": {
-        "includeFiles": ["frontEnd/**", "disenno/**"]
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
