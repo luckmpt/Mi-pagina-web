@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Poblete Tassara</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../disenno/landing.css">
+</head>
+<body>
+
+    <!-- Top Developer Header Bar -->
+    <div class="top-decor-bar">
+        <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+            <span class="terminal-title">lucas@dev-environment: ~/acerca_de_mi</span>
+        </div>
+        <div class="status-tag">
+            <span class="pulse-dot"></span>
+            <span>Disponible para Práctica II</span>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- Hero Header Card -->
+        <header class="hero">
+            <div class="hero-header-line">
+                <span>const developer =</span> <span class="syntax-keyword">new</span> <span>ComputerEngineer();</span>
+            </div>
+            <h1>Lucas Poblete Tassara</h1>
+            <div class="hero-title">
+                <span>Estudiante de Ingeniería Civil en Computación</span>
+                <span class="divider">|</span>
+                <span class="highlight-green">Universidad de Chile</span>
+            </div>
+            <p class="hero-desc">
+                En búsqueda de Práctica Profesional II en <strong>Desarrollo de Software, Backend, Análisis de Datos o Sistemas</strong>. Formación sólida en algoritmia, estructuras de datos y orientación a objetos, con alta versatilidad para aprender cualquier stack tecnológico o lenguaje de programación.
+            </p>
+            <div class="hero-contacts">
+                <span class="contact-chip">📍 Santiago de Chile</span>
+                <a href="tel:+56982479999" class="contact-chip">📞 +56 9 8247 9999</a>
+                <a href="mailto:lpoblete@dcc.uchile.cl" class="contact-chip">✉️ lpoblete@dcc.uchile.cl</a>
+                <a href="https://github.com/luckmpt" target="_blank" class="contact-chip">🐙 github.com/luckmpt</a>
+                <a href="https://linkedin.com/in/lucas-poblete-tassara-7322383b6" target="_blank" class="contact-chip">💼 LinkedIn</a>
+                <a href="https://luckmpt.itch.io" target="_blank" class="contact-chip">🎮 luckmpt.itch.io</a>
+            </div>
+        </header>
+
+        <div class="main-grid">
+
+            <!-- Main Content Column -->
+            <div class="content-col">
+
+                <!-- Projects Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="prefix">01.</span> Projects & Work
+                    </h2>
+
+                    <!-- Interactive Filter Bar -->
+                    <div class="filter-bar">
+                        <button class="filter-btn active" onclick="filterProjects('all', event)">all</button>
+                        <button class="filter-btn" onclick="filterProjects('Pattern Design OOP', event)">Pattern Design OOP</button>
+                        <button class="filter-btn" onclick="filterProjects('web', event)">web/backend</button>
+                        <button class="filter-btn" onclick="filterProjects('graphics', event)">graphics/3d</button>
+                        <button class="filter-btn" onclick="filterProjects('games', event)">games</button>
+                    </div>
+
+                    <div class="projects-grid" id="projects-list">
+
+                        <div class="project-card" data-category="games">
+                            <div class="project-top">
+                                <div class="project-name"><span>🔦</span> MAGIC FLASH LIGHT</div>
+                                <div class="project-links">
+                                    <a href="https://luckmpt.itch.io" target="_blank" class="project-link">[itch.io ↗]</a>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Videojuego platformer desarrollado para el Taller de Diseño y Desarrollo de Videojuegos. Implementa una mecánica innovadora: encender la linterna para hacer tangibles plataformas y objetos, o apagarla para traspasarlos.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tag">Godot</span>
+                                <span class="tag">GDScript</span>
+                                <span class="tag">2D Platformer</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="web">
+                            <div class="project-top">
+                                <div class="project-name"><span>🌐</span> PANORAMAPP</div>
+                                <div class="project-links">
+                                    <a href="https://github.com/DCC-CC4401/2025-2-CC4401-grupo-5" target="_blank" class="project-link">[GitHub ↗]</a>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Aplicación web colaborativa desarrollada para Ingeniería de Software, enfocada en la búsqueda, publicación y gestión de eventos sociales con interacción entre usuarios.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tag">Django</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">SQL</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="Pattern Design OOP">
+                            <div class="project-top">
+                                <div class="project-name"><span>⚙️</span> MALATRO</div>
+                                <div class="project-links">
+                                    <a href="//https://github.com/luckmpt/malatro" target="_blank" class="project-link">[GitHub ↗]</a>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Controlador de estado complejo con simulación de lógica. Construido en Scala empleando programación orientada a objetos, interfaces y Patrones de Diseño.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tag">Scala</span>
+                                <span class="tag">OOP</span>
+                                <span class="tag">Design Patterns</span>
+                            </div>
+                        </div>
+
+                        <div class="project-card" data-category="graphics">
+                            <div class="project-top">
+                                <div class="project-name"><span>🎰</span> PINBALL 3D</div>
+                                <div class="project-links">
+                                    <a href="//https://github.com/luckmpt/pinball" target="_blank" class="project-link">[GitHub ↗]</a>
+                                </div>
+                            </div>
+                            <p class="project-desc">
+                                Simulación física e interactiva en 3D. Optimizó el renderizado directamente en la GPU usando shaders programados en GLSL para Modelación y Computación Gráfica.
+                            </p>
+                            <div class="tech-tags">
+                                <span class="tag">OpenGL</span>
+                                <span class="tag">GLSL</span>
+                                <span class="tag">3D Rendering</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="prefix">02.</span> Experience
+                    </h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-role">Práctica Profesional I</span>
+                                <span class="timeline-date">Dic 2025 – Ene 2026</span>
+                            </div>
+                            <div class="timeline-org">Centro de Investigación e Innovación — Universidad Autónoma de Chile</div>
+                            <p class="project-desc">
+                                Optimización de procesos, estructuración y análisis de datos. Automatización de operaciones computacionales para investigaciones en el área de Química.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Education Section -->
+                <section class="section-card">
+                    <h2 class="section-title">
+                        <span class="prefix">03.</span> Education
+                    </h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-role">Ingeniería Civil en Computación</span>
+                                <span class="timeline-date">2022 – Presente</span>
+                            </div>
+                            <div class="timeline-org">Universidad de Chile — FCFM (DCC)</div>
+                            <p class="project-desc">En el departamento de Ciencias de la Computación de la facultad de Ciencias Físicas y Matemáticas, actualmente estudio licenciatura e Ingeniería Civil en Computación.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-role">Plan Común de Ingeniería y Ciencias</span>
+                                <span class="timeline-date">2022 – 2023</span>
+                            </div>
+                            <div class="timeline-org">Universidad de Chile — FCFM</div>
+                            <p class="project-desc">Aprobado con nota 5.7. Formación rigurosa en ciencias básicas, matemáticas avanzadas y proyectos de innovación.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-header">
+                                <span class="timeline-role">Enseñanza Básica y Media</span>
+                                <span class="timeline-date">2010 – 2021</span>
+                            </div>
+                            <div class="timeline-org">Colegio José Luis Lagrange</div>
+                            <p class="project-desc">Modalidad Científico-Humanista. Promedio NEM: 6.5.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar Column -->
+            <div class="sidebar-col">
+
+                <!-- Tech Stack Widget -->
+                <section class="section-card">
+                    <h2 class="section-title"><span class="prefix">04.</span> Tech Stack</h2>
+                    
+                    <div class="skill-group">
+                        <div class="skill-group-title">// Lenguajes</div>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Python</span>
+                            <span class="skill-chip">C</span>
+                            <span class="skill-chip">C++</span>
+                            <span class="skill-chip">Scala</span>
+                            <span class="skill-chip">SQL</span>
+                            <span class="skill-chip">JavaScript</span>
+                            <span class="skill-chip">GDScript</span>
+                            <span class="skill-chip">GLSL</span>
+                            <span class="skill-chip">Assembler</span>
+                            <span class="skill-chip">Racket</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">// Frameworks & Libs</div>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Django</span>
+                            <span class="skill-chip">Pandas</span>
+                            <span class="skill-chip">NumPy</span>
+                            <span class="skill-chip">SciPy</span>
+                            <span class="skill-chip">Scikit-learn</span>
+                            <span class="skill-chip">OpenGL</span>
+                            <span class="skill-chip">pyglet</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">// Tools & Ops</div>
+                        <div class="skill-chips">
+                            <span class="skill-chip">Git/GitHub</span>
+                            <span class="skill-chip">Linux</span>
+                            <span class="skill-chip">PostgreSQL</span>
+                            <span class="skill-chip">VSCode</span>
+                            <span class="skill-chip">Godot</span>
+                            <span class="skill-chip">Blender</span>
+                            <span class="skill-chip">Figma</span>
+                            <span class="skill-chip">pthreads</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Extracurricular / Honors -->
+                <section class="section-card">
+                    <h2 class="section-title"><span class="prefix">05.</span> Honors & Extra</h2>
+                    <ul class="simple-list">
+                        <li>🏆 Premio Trayectoria Escolar 2021</li>
+                        <li>🏅 Alumno Lagrange 2021</li>
+                        <li>🥋 Cinturón Negro 3BD Taekwondo (2024)</li>
+                        <li>🥋 Instructor Level 2 Taekwondo (2025)</li>
+                    </ul>
+                </section>
+
+                <!-- Interactive Terminal Widget -->
+                <div class="interactive-console">
+                    <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> status --check</div>
+                    <div class="console-output">Ready for Professional Practice II [OK]</div>
+                    <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> cat goals.txt</div>
+                    <div class="console-output">Ingenieria de Software | Mineria de Datos | Sistemas Operativos | OOP | Lenguajes de Programación | Design Pattern | Algoritmos y Estructuras de Datos</div>
+                    <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> <span class="typing-cursor"></span></div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <footer>
+            Lucas Poblete Tassara &copy; 2026
+        </footer>
+
+    </div>
+
+    <div class="cmd-hint">
+        <span>Presiona</span> <kbd>Ctrl</kbd> + <kbd>K</kbd> <span>para buscar</span>
+    </div>
+
+    <script src="../disenno/script.js"></script>
+</body>
+</html>
