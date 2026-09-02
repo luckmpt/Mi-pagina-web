@@ -717,23 +717,23 @@ footer {
     }
     
     .hero-name-section {
-        flex-direction: column;
+        flex-direction: row;
         align-items: flex-start;
-        gap: 0;
+        gap: 12px;
         margin-bottom: 8px;
     }
     
     .hero h1 {
         font-size: 1.5rem;
+        flex: 1;
     }
     
     .profile-photo {
-        width: 65px;
-        height: 65px;
+        width: 60px;
+        height: 60px;
         flex-shrink: 0;
-        position: absolute;
-        right: 24px;
-        top: 200px;
+        position: static;
+        margin-top: 2px;
     }
     
     .hero-title {
@@ -751,14 +751,11 @@ footer {
         font-size: 0.85rem;
         line-height: 1.5;
         margin-bottom: 12px;
-        padding-right: 75px;
     }
     
     .hero-contacts {
         flex-wrap: wrap;
         gap: 8px;
-        grid-column: 1 / -1;
-        grid-row: 5;
         border-top: 1px solid var(--border-color);
         padding-top: 12px;
         margin-top: 8px;
