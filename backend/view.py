@@ -16,5 +16,13 @@ def index():
         return redirect(url_for('index'))
     return render_template('landing.html')
 
+@app.errorhandler(404)
+def not_found(error):
+    return redirect(url_for('index')), 302
+
+@app.errorhandler(500)
+def internal_error(error):
+    return "Error interno del servidor", 500
+
 if __name__ == '__main__':
     app.run(debug=True)

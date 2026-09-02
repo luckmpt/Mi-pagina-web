@@ -14,9 +14,9 @@ OJO, hay instrucciones que se hacen **SOLO POR PRIMERA VEZ** Y OTRAS QUE SE HACE
 python -m venv venv
 ```
 
-### 2. Acrivar entorno virtual, siga instrucciones para Windows (PaweShell), Windows(CMD), Linux/Mac **CADA VEZ SOLO SI SE CREO EL ENTORNO ANTES**
+### 2. Activar entorno virtual, siga instrucciones para Windows (PowerShell), Windows(CMD), Linux/Mac **CADA VEZ SI SE CREÓ EL ENTORNO ANTES**
 
-- Windows (PaweShell)
+- Windows (PowerShell)
 ````
 .\venv\Scripts\Activate
 ````
@@ -29,17 +29,19 @@ venv\Scripts\activate.bat
 source venv/bin/activate
 ````
 
-### 3. Instalar dependencias **SOLO UNA VEZ**
+### 3. Instalar dependencias **SOLO POR PRIMERA VEZ**
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Ejecucion
+## Ejecución
 
-- Ejecute en la raiz del repositorio
+Ejecute en la raíz del repositorio:
 
 ````
 python -m backend.view
 ````
+
+Luego acceda a `http://localhost:5000` en su navegador.
 

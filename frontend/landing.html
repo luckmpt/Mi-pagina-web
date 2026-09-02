@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lucas Poblete Tassara</title>
+    <link rel="icon" type="image/png" href="../media/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,22 +33,28 @@
             <div class="hero-header-line">
                 <span>const developer =</span> <span class="syntax-keyword">new</span> <span>ComputerEngineer();</span>
             </div>
-            <h1>Lucas Poblete Tassara</h1>
+            <div class="hero-name-section">
+                <h1>Lucas Poblete Tassara</h1>
+                <div class="profile-photo">
+                    <img src="../media/foto_cv.png" alt="Lucas Poblete Tassara" />
+                </div>
+            </div>
             <div class="hero-title">
                 <span>Estudiante de Ingeniería Civil en Computación</span>
                 <span class="divider">|</span>
                 <span class="highlight-green">Universidad de Chile</span>
             </div>
             <p class="hero-desc">
-                En búsqueda de Práctica Profesional II en <strong>Desarrollo de Software, Backend, Análisis de Datos o Sistemas</strong>. Formación sólida en algoritmia, estructuras de datos y orientación a objetos, con alta versatilidad para aprender cualquier stack tecnológico o lenguaje de programación.
+                Estudiante de décimo semestre de Ingeniería Civil en Computación. Buscando Práctica Profesional II en <strong>Desarrollo de Software, Backend, Análisis de Datos, Compiladores o Sistemas</strong>. Me desenvuelvo con sólida formación en algoritmia, estructuras de datos y orientación a objetos. Alta adaptabilidad para integrar nuevos lenguajes, stacks tecnológicos e infraestructura (Linux, contenedores, Docker).
             </p>
             <div class="hero-contacts">
                 <span class="contact-chip">📍 Santiago de Chile</span>
                 <a href="tel:+56982479999" class="contact-chip">📞 +56 9 8247 9999</a>
-                <a href="mailto:lpoblete@dcc.uchile.cl" class="contact-chip">✉️ lpoblete@dcc.uchile.cl</a>
+                <a href="mailto:lpoblete@dcc.uchile.cl" class="contact-chip email-chip" onclick="copyEmail(event)">✉️ lpoblete@dcc.uchile.cl</a>
                 <a href="https://github.com/luckmpt" target="_blank" class="contact-chip">🐙 github.com/luckmpt</a>
                 <a href="https://linkedin.com/in/lucas-poblete-tassara-7322383b6" target="_blank" class="contact-chip">💼 LinkedIn</a>
                 <a href="https://luckmpt.itch.io" target="_blank" class="contact-chip">🎮 luckmpt.itch.io</a>
+                <a href="../media/CV%20Lucas%20Poblete%20Tassara.pdf" download class="contact-chip cv-download">📄 Descargar CV</a>
             </div>
         </header>
 
@@ -62,24 +69,31 @@
                         <span class="prefix">01.</span> Projects & Work
                     </h2>
 
+                    <!-- Search Bar -->
+                    <div class="search-bar">
+                        <input type="text" id="project-search" class="search-input" placeholder="🔍 Buscar proyectos..." />
+                    </div>
+
                     <!-- Interactive Filter Bar -->
                     <div class="filter-bar">
                         <button class="filter-btn active" onclick="filterProjects('all', event)">all</button>
-                        <button class="filter-btn" onclick="filterProjects('Pattern Design OOP', event)">Pattern Design OOP</button>
+                        <button class="filter-btn" onclick="filterProjects('Pattern Design OOP', event)">design patterns</button>
                         <button class="filter-btn" onclick="filterProjects('web', event)">web/backend</button>
                         <button class="filter-btn" onclick="filterProjects('graphics', event)">graphics/3d</button>
                         <button class="filter-btn" onclick="filterProjects('games', event)">games</button>
+                        <button class="filter-btn" onclick="filterProjects('Algoritmos/Estructuras de Datos', event)">algorithms</button>
                     </div>
 
                     <div class="projects-grid" id="projects-list">
 
-                        <div class="project-card" data-category="games">
+                        <div class="project-card" data-category="games" data-search="magic flash light videojuego plataformer godot" onclick="openProjectModal(this)">
                             <div class="project-top">
                                 <div class="project-name"><span>🔦</span> MAGIC FLASH LIGHT</div>
                                 <div class="project-links">
-                                    <a href="https://luckmpt.itch.io" target="_blank" class="project-link">[itch.io ↗]</a>
+                                    <a href="https://luckmpt.itch.io" target="_blank" class="project-link" onclick="event.stopPropagation()">[itch.io ↗]</a>
                                 </div>
                             </div>
+                            <img src="../media/fotos_proyectos/magicFlashLight.jpg" alt="Magic Flash Light" class="project-thumbnail" />
                             <p class="project-desc">
                                 Videojuego platformer desarrollado para el Taller de Diseño y Desarrollo de Videojuegos. Implementa una mecánica innovadora: encender la linterna para hacer tangibles plataformas y objetos, o apagarla para traspasarlos.
                             </p>
@@ -90,13 +104,14 @@
                             </div>
                         </div>
 
-                        <div class="project-card" data-category="web">
+                        <div class="project-card" data-category="web" data-search="panoramapp django web eventos" onclick="openProjectModal(this)">
                             <div class="project-top">
                                 <div class="project-name"><span>🌐</span> PANORAMAPP</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/DCC-CC4401/2025-2-CC4401-grupo-5" target="_blank" class="project-link">[GitHub ↗]</a>
+                                    <a href="https://github.com/DCC-CC4401/2025-2-CC4401-grupo-5" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
                                 </div>
                             </div>
+                            <img src="../media/fotos_proyectos/panoramapp.jpg" alt="Panoramapp" class="project-thumbnail" />
                             <p class="project-desc">
                                 Aplicación web colaborativa desarrollada para Ingeniería de Software, enfocada en la búsqueda, publicación y gestión de eventos sociales con interacción entre usuarios.
                             </p>
@@ -107,13 +122,14 @@
                             </div>
                         </div>
 
-                        <div class="project-card" data-category="Pattern Design OOP">
+                        <div class="project-card" data-category="Pattern Design OOP" data-search="malatro scala oop diseño patrones" onclick="openProjectModal(this)">
                             <div class="project-top">
                                 <div class="project-name"><span>⚙️</span> MALATRO</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/luckmpt/malatro" target="_blank" class="project-link">[GitHub ↗]</a>
+                                    <a href="https://github.com/luckmpt/malatro" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
                                 </div>
                             </div>
+                            <img src="../media/fotos_proyectos/diagrama-estados-malatro.png" alt="Malatro" class="project-thumbnail" />
                             <p class="project-desc">
                                 Controlador de estado complejo con simulación de lógica. Construido en Scala empleando programación orientada a objetos, interfaces y Patrones de Diseño.
                             </p>
@@ -124,13 +140,14 @@
                             </div>
                         </div>
 
-                        <div class="project-card" data-category="graphics">
+                        <div class="project-card" data-category="graphics" data-search="pinball 3d opengl glsl renderizado" onclick="openProjectModal(this)">
                             <div class="project-top">
                                 <div class="project-name"><span>🎰</span> PINBALL 3D</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/luckmpt/pinball" target="_blank" class="project-link">[GitHub ↗]</a>
+                                    <a href="https://github.com/luckmpt/pinball" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
                                 </div>
                             </div>
+                            <img src="../media/fotos_proyectos/pinball.gif" alt="Pinball 3D" class="project-thumbnail" />
                             <p class="project-desc">
                                 Simulación física e interactiva en 3D. Optimizó el renderizado directamente en la GPU usando shaders programados en GLSL para Modelación y Computación Gráfica.
                             </p>
@@ -141,14 +158,15 @@
                             </div>
                         </div>
 
-                        <div class="project-card" data-category="Algoritmos/Estructuras de Datos">
+                        <div class="project-card" data-category="Algoritmos/Estructuras de Datos" data-search="calculadora parser algoritmos estructuras" onclick="openProjectModal(this)">
                             <div class="project-top">
                                 <div class="project-name"><span>🧮</span> Calculadora</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/luckmpt/calculadora" target="_blank" class="project-link">[GitHub ↗]</a>
-                                    <a href="https://calculadora.lucaspoblete.me" target="_blank" class="project-link">[Web ↗]</a>
+                                    <a href="https://github.com/luckmpt/calculadora" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
+                                    <a href="https://calculadora.lucaspoblete.me" target="_blank" class="project-link" onclick="event.stopPropagation()">[Web ↗]</a>
                                 </div>
                             </div>
+                            <img src="../media/fotos_proyectos/calculadora.png" alt="Calculadora" class="project-thumbnail" />
                             <p class="project-desc">
                                 Calculadora digital con interfaz web. Implementa un parser de expresiones matemáticas y un motor de cálculo que soporta operaciones matematicas.
                             </p>
@@ -176,8 +194,13 @@
                             </div>
                             <div class="timeline-org">Centro de Investigación e Innovación — Universidad Autónoma de Chile</div>
                             <p class="project-desc">
-                                Optimización de procesos, estructuración y análisis de datos. Automatización de operaciones computacionales para investigaciones en el área de Química.
+                                En el área de química del centro realicé trabajos de ingeniería en computación que aportaron al trabajo de investigación. Tareas principales:
                             </p>
+                            <ul class="timeline-list">
+                                <li>Resolví problemas de optimización de procesos, optimizando scripts en AWK para hacerlos más rápidos y fáciles de ejecutar</li>
+                                <li>Ordenanza y análisis de datos, implementando modelos de Machine Learning para visualizar información y predecir comportamientos moleculares</li>
+                                <li>Aplicación web para presentar miembros de doctorado y sus tareas, cumpliendo requisitos UX y de usabilidad</li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -225,7 +248,7 @@
 
                 <!-- Tech Stack Widget -->
                 <section class="section-card">
-                    <h2 class="section-title"><span class="prefix">04.</span> Tech Stack</h2>
+                    <h2 class="section-title"><span class="prefix">04.</span> Skills & Stack</h2>
                     
                     <div class="skill-group">
                         <div class="skill-group-title">// Lenguajes</div>
@@ -234,12 +257,15 @@
                             <span class="skill-chip">C</span>
                             <span class="skill-chip">C++</span>
                             <span class="skill-chip">Scala</span>
+                            <span class="skill-chip">OCaml</span>
                             <span class="skill-chip">SQL</span>
                             <span class="skill-chip">JavaScript</span>
+                            <span class="skill-chip">HTML/CSS</span>
                             <span class="skill-chip">GDScript</span>
                             <span class="skill-chip">GLSL</span>
-                            <span class="skill-chip">Assembler</span>
+                            <span class="skill-chip">Assembly</span>
                             <span class="skill-chip">Racket</span>
+                            <span class="skill-chip">AWK</span>
                         </div>
                     </div>
 
@@ -247,12 +273,16 @@
                         <div class="skill-group-title">// Frameworks & Libs</div>
                         <div class="skill-chips">
                             <span class="skill-chip">Django</span>
+                            <span class="skill-chip">Flask</span>
                             <span class="skill-chip">Pandas</span>
                             <span class="skill-chip">NumPy</span>
                             <span class="skill-chip">SciPy</span>
                             <span class="skill-chip">Scikit-learn</span>
                             <span class="skill-chip">OpenGL</span>
                             <span class="skill-chip">pyglet</span>
+                            <span class="skill-chip">Pthreads</span>
+                            <span class="skill-chip">Socket</span>
+                            <span class="skill-chip">pymunk</span>
                         </div>
                     </div>
 
@@ -261,24 +291,39 @@
                         <div class="skill-chips">
                             <span class="skill-chip">Git/GitHub</span>
                             <span class="skill-chip">Linux</span>
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">Virtual Machines</span>
                             <span class="skill-chip">PostgreSQL</span>
                             <span class="skill-chip">VSCode</span>
+                            <span class="skill-chip">IntelliJ IDEA</span>
                             <span class="skill-chip">Godot</span>
                             <span class="skill-chip">Blender</span>
                             <span class="skill-chip">Figma</span>
-                            <span class="skill-chip">pthreads</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <div class="skill-group-title">// Cursos Relevantes</div>
+                        <div class="skill-chips" style="flex-direction: column; align-items: flex-start;">
+                            <span class="skill-chip">Minería de Datos</span>
+                            <span class="skill-chip">Lenguajes de Programación</span>
+                            <span class="skill-chip">Sistemas Operativos</span>
+                            <span class="skill-chip">Bases de Datos</span>
+                            <span class="skill-chip">Ingeniería de Software</span>
+                            <span class="skill-chip">Diseño y Análisis de Algoritmos</span>
+                            <span class="skill-chip">Modelación y Computación Gráfica</span>
                         </div>
                     </div>
                 </section>
 
                 <!-- Extracurricular / Honors -->
                 <section class="section-card">
-                    <h2 class="section-title"><span class="prefix">05.</span> Honors & Extra</h2>
+                    <h2 class="section-title"><span class="prefix">06.</span> Honors & Extra</h2>
                     <ul class="simple-list">
-                        <li>🏆 Premio Trayectoria Escolar 2021</li>
+                        <li>🏆 Premio a la Trayectoria Escolar 2021</li>
                         <li>🏅 Alumno Lagrange 2021</li>
-                        <li>🥋 Cinturón Negro 3BD Taekwondo (2024)</li>
-                        <li>🥋 Instructor Level 2 Taekwondo (2025)</li>
+                        <li>🥋 Cinturón Negro III dan de Taekwondo (2024)</li>
+                        <li>🥋 Instructor Level 2 de Taekwondo (2025)</li>
                     </ul>
                 </section>
 
@@ -286,8 +331,8 @@
                 <div class="interactive-console">
                     <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> status --check</div>
                     <div class="console-output">Ready for Professional Practice II [OK]</div>
-                    <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> cat goals.txt</div>
-                    <div class="console-output">Ingenieria de Software | Mineria de Datos | Sistemas Operativos | OOP | Lenguajes de Programación | Design Pattern | Algoritmos y Estructuras de Datos</div>
+                    <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> cat interests.txt</div>
+                    <div class="console-output">Software Dev | Backend | Data Analysis | Systems | Compilers</div>
                     <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> <span class="typing-cursor"></span></div>
                 </div>
 
@@ -299,6 +344,24 @@
             Lucas Poblete Tassara &copy; 2026
         </footer>
 
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeProjectModal()">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Project" class="modal-image" />
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDesc"></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-tags" id="modalTags"></div>
+                <div class="modal-links" id="modalLinks"></div>
+            </div>
+        </div>
     </div>
 
     <script src="../disenno/script.js"></script>
