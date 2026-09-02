@@ -1,9 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory
 import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 template_dir = os.path.join(base_dir, '../frontend')
 static_dir = os.path.join(base_dir, '../disenno')
+media_dir = os.path.join(base_dir, '../media')
 
 app = Flask(__name__,
             template_folder=template_dir,
@@ -15,6 +16,11 @@ def index():
         # Handle form submission or other POST requests here
         return redirect(url_for('index'))
     return render_template('landing.html')
+
+# Servir archivos de media
+@app.route('/media/<path:filename>')
+def media(filename):
+    return send_from_directory(media_dir, filename)
 
 @app.errorhandler(404)
 def not_found(error):
