@@ -119,7 +119,9 @@ function openProjectModal(card) {
         linkEl.className = 'modal-link';
         linkEl.href = link.href;
         linkEl.target = '_blank';
-        linkEl.textContent = link.textContent;
+        linkEl.setAttribute('aria-label', link.getAttribute('aria-label') || link.textContent.trim());
+        linkEl.title = link.title || linkEl.getAttribute('aria-label');
+        linkEl.innerHTML = link.innerHTML;
         linksContainer.appendChild(linkEl);
     });
     
@@ -130,6 +132,34 @@ function openProjectModal(card) {
 function closeProjectModal() {
     document.getElementById('projectModal').style.display = 'none';
     document.body.style.overflow = 'auto';
+}
+
+function navigateToSection(event, sectionId) {
+    event.preventDefault();
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+
+    const menu = document.querySelector('.section-nav');
+    menu.classList.remove('open');
+    document.querySelectorAll('.section-menu-toggle, .section-menu-contact').forEach(toggle => {
+        toggle.setAttribute('aria-expanded', 'false');
+    });
+
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.setTimeout(() => {
+        section.classList.add('nav-highlight');
+        window.setTimeout(() => section.classList.remove('nav-highlight'), 1000);
+    }, 650);
+}
+
+function toggleSectionMenu(event) {
+    event.stopPropagation();
+    const menu = document.querySelector('.section-nav');
+    const toggle = event.currentTarget;
+    const isOpen = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    const desktopToggle = document.querySelector('.section-menu-toggle');
+    if (desktopToggle) desktopToggle.setAttribute('aria-expanded', String(isOpen));
 }
 
 // Cerrar modal al hacer click fuera
@@ -164,7 +194,16 @@ let lastScrollTop = 0;
 let headerHidden = false;
 window.addEventListener('scroll', () => {
     const topBar = document.querySelector('.top-decor-bar');
+    const cvFloat = document.querySelector('.cv-float');
+    const heroContacts = document.querySelector('.hero-contacts');
+    const sectionNav = document.querySelector('.section-nav');
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    topBar.classList.toggle('scrolled', currentScroll > 20);
+    cvFloat.classList.toggle('visible', currentScroll > window.innerHeight * 0.75);
+    const linksInHeader = currentScroll > window.innerHeight * 0.85;
+    heroContacts.classList.toggle('header-links-active', linksInHeader);
+    sectionNav.classList.toggle('header-links-active', linksInHeader);
     
     // Ocultar header al hacer scroll hacia abajo (con amortiguación)
     if (currentScroll > lastScrollTop) {

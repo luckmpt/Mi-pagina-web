@@ -30,33 +30,50 @@
 
         <!-- Hero Header Card -->
         <header class="hero">
-            <div class="hero-header-line">
-                <span>const developer =</span> <span class="syntax-keyword">new</span> <span>ComputerEngineer();</span>
-            </div>
-            <div class="hero-name-section">
-                <h1>Lucas Poblete Tassara</h1>
-                <div class="profile-photo">
-                    <img src="/media/foto_cv.png" alt="Lucas Poblete Tassara" />
+            <div class="hero-inner">
+                <div class="hero-header-line">
+                    <span>const developer =</span> <span class="syntax-keyword">new</span> <span>ComputerEngineer();</span>
+                </div>
+                <div class="hero-name-section">
+                    <h1>Lucas Poblete Tassara</h1>
+                    <div class="profile-photo">
+                        <img src="/media/foto_cv.png" alt="Lucas Poblete Tassara" />
+                    </div>
+                </div>
+                <div class="hero-title">
+                    <span>Estudiante de Ingeniería Civil en Computación</span>
+                    <span class="divider">|</span>
+                    <span class="highlight-green">Universidad de Chile</span>
+                </div>
+                <p class="hero-desc">
+                    Estudiante de décimo semestre de Ingeniería Civil en Computación. Buscando Práctica Profesional II en <strong>Desarrollo de Software, Backend, Análisis de Datos, Compiladores o Sistemas</strong>. Me desenvuelvo con sólida formación en algoritmia, estructuras de datos y orientación a objetos. Alta adaptabilidad para integrar nuevos lenguajes, stacks tecnológicos e infraestructura (Linux, contenedores, Docker).
+                </p>
+                <nav class="section-nav" aria-label="Navegación principal">
+                    <button class="section-menu-toggle" type="button" aria-label="Abrir menú de secciones" aria-expanded="false" onclick="toggleSectionMenu(event)">
+                        <span></span><span></span><span></span>
+                    </button>
+                    <div class="section-nav-links">
+                        <a href="#projects" onclick="navigateToSection(event, 'projects')">Projects</a>
+                        <a href="#experience" onclick="navigateToSection(event, 'experience')">Experience</a>
+                        <a href="#education" onclick="navigateToSection(event, 'education')">Education</a>
+                        <a href="#skills" onclick="navigateToSection(event, 'skills')">Skills</a>
+                    </div>
+                </nav>
+                <div class="hero-contacts">
+                    <a href="https://wa.me/56982479999" class="contact-chip icon-link" aria-label="WhatsApp" title="WhatsApp"><img src="/media/iconos/whatsapp.png" alt="" aria-hidden="true"></a>
+                    <a href="mailto:lpoblete@dcc.uchile.cl" class="contact-chip icon-link email-chip" aria-label="Correo electrónico" title="Correo electrónico" onclick="copyEmail(event)"><img src="/media/iconos/correo.png" alt="" aria-hidden="true"></a>
+                    <a href="https://github.com/luckmpt" target="_blank" class="contact-chip icon-link" aria-label="GitHub" title="GitHub"><img src="/media/iconos/github.png" alt="" aria-hidden="true"></a>
+                    <a href="https://linkedin.com/in/lucas-poblete-tassara-7322383b6" target="_blank" class="contact-chip icon-link" aria-label="LinkedIn" title="LinkedIn"><img src="/media/iconos/linkedin.png" alt="" aria-hidden="true"></a>
+                    <a href="https://instagram.com/luck_mpt" target="_blank" class="contact-chip icon-link" aria-label="Instagram" title="Instagram"><img src="/media/iconos/instagram.png" alt="" aria-hidden="true"></a>
+                    <a href="https://luckmpt.itch.io" target="_blank" class="contact-chip icon-link" aria-label="Itch.io" title="Itch.io"><img src="/media/iconos/itch.png" alt="" aria-hidden="true"></a>
+                    <button class="contact-chip icon-link section-menu-contact" type="button" aria-label="Abrir menú de secciones" aria-expanded="false" title="Secciones" onclick="toggleSectionMenu(event)">
+                        <span></span><span></span><span></span>
+                    </button>
                 </div>
             </div>
-            <div class="hero-title">
-                <span>Estudiante de Ingeniería Civil en Computación</span>
-                <span class="divider">|</span>
-                <span class="highlight-green">Universidad de Chile</span>
-            </div>
-            <p class="hero-desc">
-                Estudiante de décimo semestre de Ingeniería Civil en Computación. Buscando Práctica Profesional II en <strong>Desarrollo de Software, Backend, Análisis de Datos, Compiladores o Sistemas</strong>. Me desenvuelvo con sólida formación en algoritmia, estructuras de datos y orientación a objetos. Alta adaptabilidad para integrar nuevos lenguajes, stacks tecnológicos e infraestructura (Linux, contenedores, Docker).
-            </p>
-            <div class="hero-contacts">
-                <span class="contact-chip">📍 Santiago de Chile</span>
-                <a href="tel:+56982479999" class="contact-chip">📞 +56 9 8247 9999</a>
-                <a href="mailto:lpoblete@dcc.uchile.cl" class="contact-chip email-chip" onclick="copyEmail(event)">✉️ lpoblete@dcc.uchile.cl</a>
-                <a href="https://github.com/luckmpt" target="_blank" class="contact-chip">🐙 github.com/luckmpt</a>
-                <a href="https://linkedin.com/in/lucas-poblete-tassara-7322383b6" target="_blank" class="contact-chip">💼 LinkedIn</a>
-                <a href="https://luckmpt.itch.io" target="_blank" class="contact-chip">🎮 luckmpt.itch.io</a>
-                <a href="/download-cv" download class="contact-chip cv-download">📄 Descargar CV</a>
-            </div>
         </header>
+
+        <a href="/download-cv" download class="cv-float" aria-label="Descargar CV" title="Descargar CV">↓ CV</a>
 
         <div class="main-grid">
 
@@ -64,7 +81,7 @@
             <div class="content-col">
 
                 <!-- Projects Section -->
-                <section class="section-card">
+                <section id="projects" class="section-card">
                     <h2 class="section-title">
                         <span class="prefix">01.</span> Projects & Work
                     </h2>
@@ -90,7 +107,7 @@
                             <div class="project-top">
                                 <div class="project-name"><span>🔦</span> MAGIC FLASH LIGHT</div>
                                 <div class="project-links">
-                                    <a href="https://luckmpt.itch.io" target="_blank" class="project-link" onclick="event.stopPropagation()">[itch.io ↗]</a>
+                                    <a href="https://luckmpt.itch.io" target="_blank" class="project-link" aria-label="Itch.io" title="Itch.io" onclick="event.stopPropagation()"><img src="/media/iconos/itch.png" alt="" aria-hidden="true"></a>
                                 </div>
                             </div>
                             <img src="/media/fotos_proyectos/magicFlashLight.jpg" alt="Magic Flash Light" class="project-thumbnail" />
@@ -108,7 +125,7 @@
                             <div class="project-top">
                                 <div class="project-name"><span>🌐</span> PANORAMAPP</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/DCC-CC4401/2025-2-CC4401-grupo-5" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
+                                    <a href="https://github.com/DCC-CC4401/2025-2-CC4401-grupo-5" target="_blank" class="project-link" aria-label="GitHub" title="GitHub" onclick="event.stopPropagation()"><img src="/media/iconos/github.png" alt="" aria-hidden="true"></a>
                                 </div>
                             </div>
                             <img src="/media/fotos_proyectos/panoramapp.jpg" alt="Panoramapp" class="project-thumbnail" />
@@ -126,7 +143,7 @@
                             <div class="project-top">
                                 <div class="project-name"><span>⚙️</span> MALATRO</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/luckmpt/malatro" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
+                                    <a href="https://github.com/luckmpt/malatro" target="_blank" class="project-link" aria-label="GitHub" title="GitHub" onclick="event.stopPropagation()"><img src="/media/iconos/github.png" alt="" aria-hidden="true"></a>
                                 </div>
                             </div>
                             <img src="/media/fotos_proyectos/diagrama-estados-malatro.png" alt="Malatro" class="project-thumbnail" />
@@ -144,7 +161,7 @@
                             <div class="project-top">
                                 <div class="project-name"><span>🎰</span> PINBALL 3D</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/luckmpt/pinball" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
+                                    <a href="https://github.com/luckmpt/pinball" target="_blank" class="project-link" aria-label="GitHub" title="GitHub" onclick="event.stopPropagation()"><img src="/media/iconos/github.png" alt="" aria-hidden="true"></a>
                                 </div>
                             </div>
                             <img src="/media/fotos_proyectos/pinball.gif" alt="Pinball 3D" class="project-thumbnail" />
@@ -162,8 +179,8 @@
                             <div class="project-top">
                                 <div class="project-name"><span>🧮</span> Calculadora</div>
                                 <div class="project-links">
-                                    <a href="https://github.com/luckmpt/calculadora" target="_blank" class="project-link" onclick="event.stopPropagation()">[GitHub ↗]</a>
-                                    <a href="https://calculadora.lucaspoblete.me" target="_blank" class="project-link" onclick="event.stopPropagation()">[Web ↗]</a>
+                                    <a href="https://github.com/luckmpt/calculadora" target="_blank" class="project-link" aria-label="GitHub" title="GitHub" onclick="event.stopPropagation()"><img src="/media/iconos/github.png" alt="" aria-hidden="true"></a>
+                                    <a href="https://calculadora.lucaspoblete.me" target="_blank" class="project-link project-web-link" aria-label="Sitio web" title="Sitio web" onclick="event.stopPropagation()"><img src="/media/iconos/web.png" alt="" aria-hidden="true"></a>
                                 </div>
                             </div>
                             <img src="/media/fotos_proyectos/calculadora.png" alt="Calculadora" class="project-thumbnail" />
@@ -181,7 +198,7 @@
                 </section>
 
                 <!-- Experience Section -->
-                <section class="section-card">
+                <section id="experience" class="section-card">
                     <h2 class="section-title">
                         <span class="prefix">02.</span> Experience
                     </h2>
@@ -206,7 +223,7 @@
                 </section>
 
                 <!-- Education Section -->
-                <section class="section-card">
+                <section id="education" class="section-card">
                     <h2 class="section-title">
                         <span class="prefix">03.</span> Education
                     </h2>
@@ -247,7 +264,7 @@
             <div class="sidebar-col">
 
                 <!-- Tech Stack Widget -->
-                <section class="section-card">
+                <section id="skills" class="section-card">
                     <h2 class="section-title"><span class="prefix">04.</span> Skills & Stack</h2>
                     
                     <div class="skill-group">
@@ -317,7 +334,7 @@
                 </section>
 
                 <!-- Extracurricular / Honors -->
-                <section class="section-card">
+                <section id="honors" class="section-card">
                     <h2 class="section-title"><span class="prefix">06.</span> Honors & Extra</h2>
                     <ul class="simple-list">
                         <li>🏆 Premio a la Trayectoria Escolar 2021</li>
@@ -328,7 +345,7 @@
                 </section>
 
                 <!-- Interactive Terminal Widget -->
-                <div class="interactive-console">
+                <div id="console" class="interactive-console">
                     <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> status --check</div>
                     <div class="console-output">Ready for Professional Practice II [OK]</div>
                     <div class="console-line"><span class="console-prompt">lpoblete@dcc:~$</span> cat interests.txt</div>
@@ -355,11 +372,11 @@
                 <div class="modal-info">
                     <h3 id="modalTitle"></h3>
                     <p id="modalDesc"></p>
+                    <div class="modal-footer">
+                        <div class="modal-tags" id="modalTags"></div>
+                        <div class="modal-links" id="modalLinks"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <div class="modal-tags" id="modalTags"></div>
-                <div class="modal-links" id="modalLinks"></div>
             </div>
         </div>
     </div>
