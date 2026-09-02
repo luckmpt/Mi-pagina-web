@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_file, send_from_directory
 import os
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -21,6 +21,11 @@ def index():
 @app.route('/media/<path:filename>')
 def media(filename):
     return send_from_directory(media_dir, filename)
+
+@app.route('/download-cv')
+def download_cv():
+    cv_path = os.path.join(media_dir, 'CV Lucas Poblete Tassara.pdf')
+    return send_file(cv_path, mimetype='application/pdf', as_attachment=True, download_name='CV Lucas Poblete Tassara.pdf')
 
 @app.errorhandler(404)
 def not_found(error):
