@@ -2109,6 +2109,7 @@ kbd { background: var(--border-color); color: var(--text-main); padding: 2px 6px
 .section-nav.header-links-active {
     left: auto !important;
     right: 18px !important;
+    background: #111827 !important;
 }
 
 .hero-contacts.header-links-active {
